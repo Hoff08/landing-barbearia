@@ -490,9 +490,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        // Scripts Gerais
-        // Modal removido - agora redireciona para login
-
         // Controle do cabeçalho inteligente
         let lastScrollTop = 0;
         const header = document.getElementById('header');
@@ -548,16 +545,11 @@
         window.addEventListener('scroll', revealOnScroll);
         document.addEventListener('DOMContentLoaded', revealOnScroll);
 
-        // Botão CTA agora redireciona diretamente para login
+        // Tooltip do botão CTA
         (function() {
             const ctaButton = document.getElementById('ctaScheduleBtn');
             if (!ctaButton) return;
             
-            // Garantir redirecionamento também via JS
-            ctaButton.addEventListener('click', function() {
-                window.location.href = '/login';
-            });
-
             // Tooltip simples para desktop
             const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
             if (!isTouchDevice) {
@@ -566,15 +558,7 @@
             }
         })();
 
-        // Botão flutuante: garantir redirecionamento
-        (function() {
-            const floatingBtn = document.getElementById('floatingAppointmentBtn');
-            if (!floatingBtn) return;
-            floatingBtn.addEventListener('click', function() {
-                window.location.href = '/login';
-            });
-        })();
-
+        // Funcionalidade de copiar endereço
         (function() {
             const copyBtn = document.getElementById('copyAddressBtn');
             if(!copyBtn) return;
